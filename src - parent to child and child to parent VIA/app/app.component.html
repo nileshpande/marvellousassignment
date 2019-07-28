@@ -1,0 +1,16 @@
+<h1 style="text-align: center;" >Communication</h1>
+<div style="border: 1px solid rgb(251, 190, 190);width:100%;padding:20px;margin:50px auto;text-align:center;" >
+<h2 style="text-align: center;" >Parent to Child</h2>
+<button (click)="funchange()" >Parent fun</button>
+<p>{{message2}}</p>
+
+
+<input type="text" [(ngModel)]="message2" />
+
+</div>
+<app-first [parentmsg]="message" (obj)="message2= $event" ></app-first>
+
+
+
+
+<app-second></app-second>

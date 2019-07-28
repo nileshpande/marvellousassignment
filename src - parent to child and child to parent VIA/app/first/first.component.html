@@ -1,0 +1,9 @@
+<p>Out Put By Parent message : - {{ parentmsg }}</p>
+
+<span>Button event to send event from child: - </span><button (click)="SendEvent()">Send Event</button>
+
+<p>
+    {{ bychild }}
+</p>
+
+<input type="text" [(ngModel)]="bychild" />
