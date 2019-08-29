@@ -1,0 +1,58 @@
+<div class="container" >
+  <div class="row pb-5 " >
+    <div class="col-lg-7 " >
+      <h1 class="text-danger text-center">Contact Our</h1>
+      <h1 class="text-center" >Customer Support Center</h1>
+    </div>
+    <div class="col-lg-5" >
+        <img class="responsive" alt="laptop"  src="../assets/img/MarvellousImage.jpeg" />
+    </div>
+       
+  </div>
+  <div class="row" >
+    <form style="width:100%;" [formGroup]="profileForm" (ngSubmit)="onSubmit()" >
+      <div class="col-lg-12 text-center pb-5" >
+          <h5>Contact Our <br>
+            <span>Please fill out your contact information below.</span>
+          </h5>
+      </div>
+      <div class="col-lg-4" >
+          <div class="form-group">
+            <label for="exampleInputEmail1">First Name</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" formControlName="firstName" placeholder="First Name">
+            <small id="emailHelp" class="form-text text-muted">First Name</small>
+          </div>
+      </div>
+      <div class="col-lg-4" >
+          <div class="form-group">
+            <label for="exampleInputEmail1">Last Name</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" formControlName="lastName" placeholder="Last Name">
+            <small id="emailHelp" class="form-text text-muted">Last Name</small>
+          </div>
+      </div>
+      <div class="col-lg-12" >
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" formControlName="email" placeholder="Enter email">
+          </div>
+      </div>
+      <div class="col-lg-12" >
+          <div class="form-group">
+            <label for="exampleInputEmail1">Phone</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" formControlName="phone" placeholder="Enter Phone">
+          </div>
+      </div>
+      <div class="col-lg-12" >
+          <div class="form-group">
+            <label for="exampleInputEmail1">Address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" formControlName="address" placeholder="Enter Address">
+          </div>
+      </div>
+
+      <div class="col-lg-12" >
+          <button type="submit"  class="btn btn-primary" [disabled]="!profileForm.valid">Submit</button>
+         
+    </div>
+  </form>
+  </div> 
+</div>
