@@ -1,0 +1,43 @@
+<form class="row" >
+    <div class=" col-lg-10 form-group mr-0 pr-0 ">
+         
+        <input class="form-control" name="searchInput" placeholder="Search Students into Marvellous DB" #searchInput="ngModel" [(ngModel)]="searchText" >
+    </div>
+    <div class="col-lg-2 pl-0 ml-0" >
+        <button type="submit" class="btn btn-primary " (click)="searchText=''" >Search</button>
+    </div>
+</form>
+<h4 class="text-center text-primary">
+    Student List
+</h4>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Mobile</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Action</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let student of studentArray" >
+      <tr *ngIf="filterCondition(student)"  >
+        <td>{{student.fullName}}</td>
+        <td>{{student.email}}</td>
+        <td>{{student.mobile}}</td>
+        <td>{{student.address}}</td>
+        <td>
+            <button class="btn btn-sm btn-outline-info mr-2" (click)="studentService.populateForm(student)" >Edit</button>
+            <button class="btn btn-sm btn-outline-danger mr-2" (click)="onDelete(student.$key)" >Delete</button>
+        </td>
+      </tr>
+      </ng-container>
+     
+    </tbody>
+  </table>
+
+  <div class="alert alert-danger" *ngIf="showDeletedMessage">
+      Deleted successfully from Marvellous Database.
+    </div>
